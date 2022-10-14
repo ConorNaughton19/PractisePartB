@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'war'
+
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencies {
+    implementation 'com.github.ConorNaughton19:PractisePartA:master-SNAPSHOT'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    implementation 'org.terasoluna.gfw:terasoluna-gfw-jodatime:5.7.1.RELEASE'
+}
+
+test {
+    useJUnitPlatform()
+}
